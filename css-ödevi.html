@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Temel Ödevi</title>
+    <style>
+        /* Genel Sayfa Ayarları */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fcf9fc; 
+            margin: 0;
+            padding: 20px 50px;
+            color: #4a235a;
+        }
+
+        /* İstenen Kural: 1 Adet Grup Seçici */
+        h1, h2, p {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Header ve Menü Düzeni */
+        header {
+            border-bottom: 2px solid #d8bfd8; 
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            display: inline-block; 
+            margin: 0;
+            color: #9370db; 
+        }
+
+        nav {
+            display: inline-block;
+            float: right; 
+            margin-top: 5px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* İstenen Kural: Yatay menü (display: inline-block) ve Hiyerarşik Seçici */
+        nav ul li {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        /* İstenen Kural: Linklere hover efekti */
+        nav ul li a {
+            text-decoration: none;
+            background-color: #d8bfd8; 
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffb6c1; /* Hover durumunda pembe */
+            color: #fff;
+        }
+
+        /* Giriş metni alanı */
+        .intro {
+            background-color: #fff0f5; 
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #ffb6c1;
+        }
+
+        /* Kutuları yan yana getirme */
+        .kutu-kapsayici {
+            width: 100%;
+            font-size: 0; 
+        }
+
+        .icerik-kutusu, .yan-menu-kutusu {
+            display: inline-block; /* Yan yana getirme mantığı */
+            vertical-align: top;
+            box-sizing: border-box; 
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .icerik-kutusu {
+            width: 60%;
+            background-color: #fff0f5; /* Pembe kutu */
+            border: 2px solid #ffb6c1; 
+            margin-right: 4%; 
+        }
+
+        .yan-menu-kutusu {
+            width: 36%;
+            background-color: #f3e5f5; /* Lila kutu */
+            border: 2px solid #d8bfd8; 
+        }
+
+        /* İstenen Kural: Hiyerarşik Seçici ve Paragraflarda 3 CSS özelliği */
+        .icerik-kutusu p, .yan-menu-kutusu p {
+            font-size: 15px;            
+            line-height: 1.6;           
+            text-align: justify;        
+            color: #555;                
+        }
+
+        /* Footer Ayarları */
+        footer {
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #d8bfd8; 
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        footer p {
+            margin: 0;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CSS Temel Ödevi</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">← Ana Sayfaya Dön</a></li>
+                <li><a href="#">Hakkında</a></li>
+                <li><a href="#">Hizmetler</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p>Verilen benzer bir düzenle basit bir web sayfası oluşturun. CSS'in temel özelliklerini (display, width, height, margin, padding, border, selector) uygulayın. Sadece HTML5 + CSS3 kullanın, hazır framework kullanmak yasak.</p>
+        </section>
+
+        <div class="kutu-kapsayici">
+            <div class="icerik-kutusu">
+                <h2>İçerik</h2>
+                <p>Bu alanda örnek içerik metinleri bulunmaktadır. Css özellikleriyle bu metinler arasında <strong>boşluklar</strong> (line-height) ve hizalamalar (text-align) düzenlemeliyiz.</p>
+                <p>Önce CSS ile kutuları / alanları yan yana getirmeyi, ardından alt alta yerleştirmeyi öğrendik. Şimdi ise CSS seçicilerini kullanarak grup ve hiyerarşik seçimler yapmayı göreceğiz.</p>
+            </div>
+
+            <aside class="yan-menu-kutusu">
+                <h2>Yan Menü / Bilgi</h2>
+                <p>Bu alan yan menü veya bilgi kısmıdır. CSS ile genişlik (width), yükseklik (height), kenar boşlukları (margin/padding) ve kenarlık (border) özelliklerini kullanarak düzenleyebiliriz.</p>
+                <p>Öğrendiklerimizi hiyerarşik ve grup seçicilerle uygulayıp farklı bölümlere stil verebiliriz.</p>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 CSS Temel Örnek. Lila ve pembe temalı tasarım.</p>
+    </footer>
+
+</body>
+</html>
